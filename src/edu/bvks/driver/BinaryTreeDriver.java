@@ -38,6 +38,8 @@ public class BinaryTreeDriver {
 		tree.traverseInOrder();
 		System.out.println("POST ORDER");
 		tree.traversePostOrder();
+		System.out.println("LEVEL ORDER");
+		tree.traverseLevelOrder();
 	}
 
 }

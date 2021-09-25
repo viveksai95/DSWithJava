@@ -1,5 +1,8 @@
 package edu.bvks.binarytress;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Implementation of BINARY TREE
  * 
@@ -152,5 +155,31 @@ public class Tree {
 	// Made a blunder mistake, after copy pasting pre to post and in, forgot to
 	// change recursive function names, which totally wasted my time. make sure not
 	// to repeat this bro
+
+	public void traverseLevelOrder() {
+		this.traverseLevelOrder(root);
+	}
+
+	private void traverseLevelOrder(Node root) {
+		if (root == null)
+			return;
+		Node temp = root;
+		Queue<Node> queue = new LinkedList<>();
+
+		queue.add(temp);
+		while (!queue.isEmpty()) {
+			Node current = queue.poll();
+			if (current != null) {
+				System.out.println(current.value);
+			}
+			if (current != null && current.leftChild != null) {
+				queue.add(current.leftChild);
+			}
+			if (current != null && current.rightChild != null) {
+				queue.add(current.rightChild);
+			}
+		}
+
+	}
 
 }
